@@ -41,5 +41,5 @@ class VoiceLoop(commands.Cog):
     voiceLoop.start()
 
 
-    def setup(client):
-        client.add_cog(VoiceLoop(client))
+def setup(client):
+    client.add_cog(VoiceLoop(client))

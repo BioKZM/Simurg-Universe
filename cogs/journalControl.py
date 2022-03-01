@@ -2,6 +2,7 @@ import datetime
 import json
 from discord.utils import get
 from discord.ext import commands,tasks
+from cogs.journal import Journal
 from main import path,client
 
 class JournalControl(commands.Cog):
@@ -25,3 +26,8 @@ class JournalControl(commands.Cog):
         await client.wait_until_ready()
         print("Günlük Control Loop OK!")
     günlükControl.start()
+
+
+
+def setup(client):
+    client.add_cog(JournalControl(client))
