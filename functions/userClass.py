@@ -67,13 +67,16 @@ class User():
 		with open(self.path) as file:
 			self.data = json.load(file)
 		
+		self.isim = self.data['isim']
+		self.soyisim = self.data['soyisim']
 		self.XP = self.data['XP']
 		self.level = self.data['level']
 		self.modifier = self.data['modifier']
-		self.messageBool = self.data['messageBool'] 
+		self.tanitimBool = self.data['tanitimBool'] 
 		self.currentLevelMaximumXP = experiences[self.data['level']]-1
 		self.levelName = levelNames[self.data['level']]
-			
+		self.time = self.data['time']
+		
 	def __create(self):
 		self.data = {
                 'XP' : 0,
