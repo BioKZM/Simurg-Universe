@@ -67,3 +67,6 @@ async def test(ctx):
  		}
 		with open(path+f"/{member.id}.json","w") as file:
 			json.dump(data,file,indent=4)
+
+
+client.run(TOKEN)
