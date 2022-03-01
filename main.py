@@ -26,6 +26,7 @@ import discord
 import os
 import json
 from discord.ext import commands
+from discord_slash import SlashCommand
 from keep_alive import keep_alive
 
 TOKEN = os.environ["TOKEN"]
@@ -36,6 +37,7 @@ client = commands.Bot(command_prefix=['!','-'], intents=discord.Intents.all(),he
 intents = discord.Intents.all()
 intents.members = True
 guildID = [841307853629423656]
+slash = SlashCommand(client,sync_commands=True)
 path = "userFiles"
 embedColor = 0xf1612a
 
