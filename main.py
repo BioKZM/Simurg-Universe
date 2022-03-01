@@ -65,7 +65,6 @@ async def test(ctx):
 			'XP' : 0,
             'level' : 0,
             'modifier' : 1,
-			'maximumXP' : 249,
 			'tanitimBool' : True,
 			'time' : False,
  		}
