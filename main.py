@@ -48,7 +48,7 @@ async def on_ready():
 	await client.change_presence(status=discord.Status.online,activity=discord.Game("The most beautiful bird of the Simurg Universe."))
 
 
-cogs = ["cogs.changeModifier","cogs.journal","cogs.journalControl","cogs.memberSituation","cogs.onMemberJoin","cogs.onMessage","cogs.saveUser","cogs.voiceLoop"]
+cogs = ["cogs.changeModifier","cogs.journal","cogs.journalControl","cogs.memberSituation","cogs.onMemberJoin","cogs.onMessage","cogs.saveUser","cogs.voiceLoop","cogs.rank","cogs.level"]
 
 for cog in cogs:
     client.load_extension(cog)
