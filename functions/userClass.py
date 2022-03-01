@@ -11,7 +11,7 @@ levelNames = ["Guest","Colony Member","Open Crew","Crew","Captain","Judge","Colo
 class User():
 	def __init__(self,memberID):
 		self.id = memberID
-		self.guild = client.get_guild(888759899226538025)
+		self.guild = client.get_guild(841307853629423656)
 		self.path = f"userFiles/levels/{self.id}.json"
 
 		if self.__userFile() == False:
