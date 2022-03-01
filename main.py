@@ -38,7 +38,7 @@ intents = discord.Intents.all()
 intents.members = True
 guildID = [841307853629423656]
 slash = SlashCommand(client,sync_commands=True)
-path = "userFiles"
+path = "userFiles/levels"
 embedColor = 0xf1612a
 
 
