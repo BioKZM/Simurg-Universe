@@ -21,7 +21,7 @@ class MemberSituation(commands.Cog):
     async def on_voice_state_update(self,member,prev,cur):
         if not member.bot:	
             if self.memberSituation(prev,cur) == "stream":
-                with open("files/modifiers.json") as file:
+                with open("userFiles/modifiers.json") as file:
                     modifiers = json.load(file)
                     modifier = modifiers['stream']
                 with open(path+f"/{member.id}.json") as file:
@@ -29,7 +29,7 @@ class MemberSituation(commands.Cog):
                 data['modifier'] = modifier
             
             elif self.memberSituation(prev,cur) == "cam":
-                with open("files/modifiers.json") as file:
+                with open("userFiles/modifiers.json") as file:
                     modifiers = json.load(file)
                     modifier = modifiers['cam']
                 with open(path+f"/{member.id}.json") as file:
@@ -37,7 +37,7 @@ class MemberSituation(commands.Cog):
                 data['modifier'] = modifier
             
             elif self.memberSituation(prev,cur) == "stream + cam":
-                with open("files/modifiers.json") as file:
+                with open("userFiles/modifiers.json") as file:
                     modifiers = json.load(file)
                     modifier = modifiers['stream'] + modifiers['cam']
                 with open(path+f"/{member.id}.json") as file:
@@ -45,7 +45,7 @@ class MemberSituation(commands.Cog):
                 data['modifier'] = modifier   
                 
             elif self.memberSituation(prev,cur) == "":
-                with open("files/modifiers.json") as file:
+                with open("userFiles/modifiers.json") as file:
                     modifiers = json.load(file)
                     modifier = modifiers['default']
                 with open(path+f"/{member.id}.json") as file:
