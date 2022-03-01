@@ -1,6 +1,7 @@
 import discord
 import json
 import time
+import datetime
 from discord.ext import commands
 from discord.utils import get
 from discord_slash.utils.manage_commands import create_choice, create_option
@@ -31,7 +32,7 @@ class Journal(commands.Cog):
 
         else:
             date_ = time.time()
-            data['time'] = date_
+            data['time'] = date_ + datetime.timedelta(days=7)
             with open(path+f"/{ctx.author.id}.json","w") as file:
                 json.dump(data,file,indent=4)
         
