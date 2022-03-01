@@ -5,8 +5,8 @@ from discord.ext import commands,tasks
 from main import path,client
 
 class JournalControl(commands.Cog):
-    def __init__(self):
-        pass
+    def __init__(self,client):
+        self.client = client
 
     @tasks.loop(hours=24)
     async def günlükControl():

@@ -7,8 +7,8 @@ from main import guildID,embedColor,path
 
 
 class SaveUser(commands.Cog):
-    def __init__(self):
-        pass
+    def __init__(self,client):
+        self.client = client
 
     @cog_ext.cog_slash(
 	name = "kullanıcı-kaydet",

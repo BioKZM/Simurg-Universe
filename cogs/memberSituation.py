@@ -3,8 +3,8 @@ from discord.ext import commands
 from main import path,client
 
 class MemberSituation(commands.Cog):
-    def __init__(self):
-        pass
+    def __init__(self,client):
+        self.client = client
 
     def memberSituation(self,prev,cur):
         if prev.channel and cur.channel:

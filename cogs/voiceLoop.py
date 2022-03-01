@@ -6,8 +6,8 @@ from main import client
 from functions.userClass import User,levelNames
 
 class VoiceLoop(commands.Cog):
-    def __init__(self):
-        pass
+    def __init__(self,client):
+        self.client = client
 
     @tasks.loop(minutes=1)
     async def voiceLoop():

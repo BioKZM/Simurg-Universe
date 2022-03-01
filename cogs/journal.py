@@ -9,8 +9,8 @@ from main import guildID,path,embedColor
 
 
 class Journal(commands.Cog):
-    def __init__(self):
-        pass
+    def __init__(self,client):
+        self.client = client
 
     @cog_ext.cog_slash(
 	name = "günlük",

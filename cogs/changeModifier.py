@@ -5,8 +5,8 @@ from main import guildID,embedColor
 from discord_slash.utils.manage_commands import create_choice, create_option
 from discord_slash import SlashContext,cog_ext
 class ChangeModifier(commands.Cog):
-    def __init__(self):
-        pass
+    def __init__(self,client):
+        self.client = client
 
 
     @cog_ext.cog_slash(
