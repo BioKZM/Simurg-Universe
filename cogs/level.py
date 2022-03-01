@@ -28,13 +28,15 @@ class Level(commands.Cog):
         elif not user.isMaxLevel():
             if experiences[user.level] - user.XP <= 0:
                 embed.add_field(name="Bir sonraki rütbe ",value=f"**{levelNames[user.level+1]}** rütbesine ulaştın! Seviye atlamak için ses kanalına girebilirsin.",inline=False)
-                embed.add_field(name="Günlük Bilgileri",description = f"Haftalık zorunlu gnücellemeye kalan süre = **{target-time.time()}**" if not user.time == False else "Günlük bilgisi bulunamadı",inline = False)
+                
                 
             else:
                 if user.level == 0:
                     embed.add_field(name="Bir sonraki rütbe ",value=f"**{levelNames[user.level]}** rütbesi için kalan puan = **{(experiences[user.level])-user.XP}**",inline=False)
+                    embed.add_field(name="Günlük Bilgileri",description = f"Haftalık zorunlu gnücellemeye kalan süre = **{target-time.time()}**" if not user.time == False else "Günlük bilgisi bulunamadı",inline = False)
                 else:
                     embed.add_field(name="Bir sonraki rütbe ",value=f"**{levelNames[user.level+1]}** rütbesi için kalan puan = **{(experiences[user.level])-user.XP}**",inline=False)
+                    embed.add_field(name="Günlük Bilgileri",description = f"Haftalık zorunlu gnücellemeye kalan süre = **{target-time.time()}**" if not user.time == False else "Günlük bilgisi bulunamadı",inline = False)
 
         embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar_url)
 
