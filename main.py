@@ -42,7 +42,7 @@ embedColor = 0xf1612a
 
 @client.event
 async def on_ready():
-	print("On Mars Way!")
+	print("Simurg Rising!")
 	await client.change_presence(status=discord.Status.online,activity=discord.Game("The most beautiful bird of the Simurg Universe."))
 
 
