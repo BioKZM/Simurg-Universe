@@ -71,7 +71,7 @@ class User():
 		self.level = self.data['level']
 		self.modifier = self.data['modifier']
 		self.messageBool = self.data['messageBool'] 
-		self.currentLevelMaximumXP = experiences[self.data['level']]
+		self.currentLevelMaximumXP = experiences[self.data['level']]-1
 		self.levelName = levelNames[self.data['level']]
 			
 	def __create(self):
