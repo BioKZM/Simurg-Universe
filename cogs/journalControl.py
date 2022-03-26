@@ -9,7 +9,7 @@ class JournalControl(commands.Cog):
     def __init__(self,client):
         self.client = client
 
-    @tasks.loop(hours=24)
+    @tasks.loop(minutes=1)
     async def günlükControl():
         guild = client.guilds[0]
         for member in client.get_all_members():
@@ -17,10 +17,20 @@ class JournalControl(commands.Cog):
                 data = json.load(file)
 
             # target = datetime.datetime.fromtimestamp(data['time']) + datetime.timedelta(days=7)
-            target = datetime.datetime.fromtimestamp(data['time'])
-            if datetime.datetime.now() == target:
-                channel = get(guild.channels,name = f"{member.name}-{member.discriminator}")
-                await channel.delete()
+            # target = datetime.datetime.fromtimestamp(data['time'])
+            target = data['time']
+            today = datetime.datetime.timestamp(datetime.datetime.now())
+            if target-today <= 0:
+                channel = get(guild.channels,name = f"{member.display_name.lower()}-{member.discriminator}")
+                # print(channel)
+                # print(f"{member.name.lower()}-{member.discriminator}")
+                try:
+                    await channel.delete()
+                    data['time'] = False
+                    with open(path+f"/{member.id}.json","w") as file:
+                        json.dump(data,file,indent=4)
+                except Exception:
+                    pass
 
     @günlükControl.before_loop
     async def before_günlükControl():

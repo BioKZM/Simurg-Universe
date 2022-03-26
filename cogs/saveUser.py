@@ -35,7 +35,7 @@ class SaveUser(commands.Cog):
 	)]
 )
     async def kullanıcıKaydet(self,ctx,kullanıcı,isim,soyisim=None):
-        if not ctx.author.id == 639156004596219924 or ctx.author.id == 373457193271558145:
+        if not ctx.author.id == 373457193271558145 or ctx.author.id == 639156004596219924:
             embed = discord.Embed(
                 title = "Hata!",
                 description = "Bu komutu kullanmaya iznin yok!",

@@ -10,12 +10,12 @@ class OnMessage(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self,message):
         channel = str(message.channel)
-        if channel == f"{message.author.name}-{message.author.discriminator}":
+        if channel == f"{message.author.display_name.lower()}-{message.author.discriminator}":
 
             with open(path+f"/{message.author.id}.json") as file:
                 data = json.load(file)
-            data['time'] == datetime.datetime.now()
-            with open(path+f"/{message.author.id}.json") as file:
+            data['time'] = datetime.datetime.timestamp(datetime.datetime.now()+ datetime.timedelta(days=7))
+            with open(path+f"/{message.author.id}.json","w") as file:
                 json.dump(data,file,indent=4)
 
 
