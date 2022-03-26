@@ -55,23 +55,4 @@ for cog in cogs:
 
 
 
-
-@client.command()
-async def test(ctx):
-	print("X")
-	for member in client.get_all_members():
-		print(member)
-		data = {
-			'isim' : '',
-			'soyisim' : '',
-			'XP' : 0,
-            'level' : 0,
-            'modifier' : 1,
-			'tanitimBool' : True,
-			'time' : False,
- 		}
-		with open(path+f"/{member.id}.json","w") as file:
-			json.dump(data,file,indent=4)
-
-
 client.run(TOKEN)
