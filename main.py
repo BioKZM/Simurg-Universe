@@ -25,13 +25,13 @@ SOFTWARE.
 import discord
 import os
 import json
-from discord.ext import commands
+from discord.ext import commands,tasks
 from discord_slash import SlashCommand
 from keep_alive import keep_alive
 
 TOKEN = os.environ["TOKEN"]
 
-keep_alive()
+
 
 client = commands.Bot(command_prefix=['!','-'], intents=discord.Intents.all(),help_command=None,case_insensitive=True)
 intents = discord.Intents.all()
@@ -40,7 +40,16 @@ guildID = [841307853629423656]
 slash = SlashCommand(client,sync_commands=True)
 path = "userFiles/levels"
 embedColor = 0xf1612a
+keep_alive()
+@tasks.loop(seconds=15)
+async def test():
+    print("This is a test message!")
 
+@test.before_loop
+async def before_günlükControl():
+    await client.wait_until_ready()
+    print("Günlük Control Loop OK!")
+test.start()
 
 @client.event
 async def on_ready():

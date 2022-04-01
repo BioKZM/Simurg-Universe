@@ -31,7 +31,7 @@ class Journal(commands.Cog):
             await ctx.send(embed=embed)
 
         else:
-            date_ = datetime.datetime.timestamp(datetime.datetime.now() + datetime.timedelta(days=7))
+            date_ = datetime.datetime.timestamp(datetime.datetime.now() + datetime.timedelta(days=15))
             data['time'] = date_
             with open(path+f"/{ctx.author.id}.json","w") as file:
                 json.dump(data,file,indent=4)
@@ -81,7 +81,7 @@ class Journal(commands.Cog):
             await ctx.send(embed=embed)
             embed = discord.Embed(
                 title = "Yardım",
-                description = f"Selam {ctx.author.mention}! Kendi odanı oluşturup bizimle tecrübeni paylaşmak istediğin için teşekkürler. \n\nBu kanalla ilgili unutmaman gereken tek bir şey var, eğer bir hafta boyunca herhangi bir paylaşım yapmazsan, kanal kendi kendini imha edecektir. \n\nKanalın silinmeden önce ne kadar zamanı kaldığını |  !level  | komutu ile öğrenebilirsin. \n\nTekrardan teşekkürler ve başarılar!",
+                description = f"Selam {ctx.author.mention}! Kendi odanı oluşturup bizimle tecrübeni paylaşmak istediğin için teşekkürler. \n\nBu kanalla ilgili unutmaman gereken tek bir şey var, eğer bir hafta boyunca herhangi bir paylaşım yapmazsan, kanal kendi kendini imha edecektir. \n\nKanalın silinmeden önce ne kadar zamanı kaldığını `!level` komutu ile öğrenebilirsin. \n\nTekrardan teşekkürler ve başarılar!",
                 color = embedColor
             )
             message = await channel.send(embed=embed)
