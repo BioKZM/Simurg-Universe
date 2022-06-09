@@ -41,20 +41,15 @@ slash = SlashCommand(client,sync_commands=True)
 path = "userFiles/levels"
 embedColor = 0xf1612a
 keep_alive()
-@tasks.loop(seconds=15)
-async def test():
-    print("This is a test message!")
 
-@test.before_loop
-async def before_günlükControl():
-    await client.wait_until_ready()
-    print("Günlük Control Loop OK!")
-test.start()
 
 @client.event
 async def on_ready():
 	print("Simurg Rising!")
 	await client.change_presence(status=discord.Status.online,activity=discord.Game("The most beautiful bird of the Simurg Universe."))
+
+
+
 
 
 cogs = ["cogs.changeModifier","cogs.journal","cogs.journalControl","cogs.memberSituation","cogs.onMemberJoin","cogs.onMessage","cogs.saveUser","cogs.voiceLoop","cogs.rank","cogs.level"]

@@ -16,14 +16,11 @@ class JournalControl(commands.Cog):
             with open(path+f"/{member.id}.json") as file:
                 data = json.load(file)
 
-            # target = datetime.datetime.fromtimestamp(data['time']) + datetime.timedelta(days=7)
-            # target = datetime.datetime.fromtimestamp(data['time'])
             target = data['time']
             today = datetime.datetime.timestamp(datetime.datetime.now())
             if target-today <= 0:
                 channel = get(guild.channels,name = f"{member.display_name.lower()}-{member.discriminator}")
-                # print(channel)
-                # print(f"{member.name.lower()}-{member.discriminator}")
+				
                 try:
                     await channel.delete()
                     data['time'] = False
